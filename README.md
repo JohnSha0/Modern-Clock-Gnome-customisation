@@ -34,8 +34,6 @@ tar -xzf modern-clock-gnome.tar.gz
 cd modern-clock-gnome
 
 # Install
-chmod +x install.sh
-./install.sh
 
 # Logout and login for changes to take effect
 ```
@@ -169,7 +167,6 @@ modern-clock-gnome/
 │       ├── Anurati.otf      # Day of week font
 │       └── Poppins.ttf      # Date and time font
 ├── dist/                    # Built archives (after make dist)
-├── install.sh               # Quick install script
 ├── Makefile                 # Build system
 ├── LICENSE                  # GPL-3.0
 └── README.md
