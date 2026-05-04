@@ -63,7 +63,7 @@ rm -rf ~/.local/share/gnome-shell/extensions/modernclock@gnome-port
 
 ### Если устанавливал из исходников (Способ 2)
 
-В папке клонированного репозитория:
+
 
 ```bash
 cd modern-clock-gnome
