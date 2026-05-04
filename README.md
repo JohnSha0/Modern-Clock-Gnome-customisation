@@ -54,6 +54,13 @@ const TIME_CHAR = '-';           // символ вокруг времени
 
 ## Удаление
 
+### Если устанавливал из архива (Способ 1) или нет папки репозитория
+
+```bash
+gnome-extensions disable modernclock@gnome-port
+rm -rf ~/.local/share/gnome-shell/extensions/modernclock@gnome-port
+```
+
 ### Если устанавливал из исходников (Способ 2)
 
 В папке клонированного репозитория:
@@ -64,13 +71,6 @@ make uninstall
 ```
 
 > `make uninstall` работает только если у тебя есть клонированный репозиторий с Makefile.
-
-### Если устанавливал из архива (Способ 1) или нет папки репозитория
-
-```bash
-gnome-extensions disable modernclock@gnome-port
-rm -rf ~/.local/share/gnome-shell/extensions/modernclock@gnome-port
-```
 
 ### Удалить шрифты (необязательно)
 
