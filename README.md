@@ -44,7 +44,7 @@ chmod +x install.sh
 
 ```bash
 # Clone the repo
-git clone https://github.com/Tony-Rain/modern-clock-gnome.git
+git clone https://github.com/YOUR_USERNAME/modern-clock-gnome.git
 cd modern-clock-gnome
 
 # Build and install
@@ -57,7 +57,7 @@ make install
 
 ```bash
 # Clone the repo
-git clone https://github.com/Tony-Rain/modern-clock-gnome.git
+git clone https://github.com/YOUR_USERNAME/modern-clock-gnome.git
 cd modern-clock-gnome
 
 # Copy extension files
