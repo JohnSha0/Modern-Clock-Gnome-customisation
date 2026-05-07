@@ -20,12 +20,10 @@ build:
 	@echo "  ✓ Build complete: $(BUILD_DIR)/"
 
 # Собрать zip-архив для распространения
-dist: build
-	@echo "▶ Packaging..."
-	@mkdir -p $(DIST_DIR)
-	@cd build && zip -r ../$(DIST_DIR)/$(UUID).zip $(UUID)/
-	@echo "  ✓ Archive: $(DIST_DIR)/$(UUID).zip"
-
+dist:
+	mkdir -p dist
+	cd src && zip -r ../dist/$(UUID).zip extension.js metadata.json stylesheet.css fonts/
+	@echo "✓ Archive: dist/$(UUID).zip"
 # Установить расширение
 install: build
 	@echo "▶ Installing to $(INSTALL_DIR)..."
