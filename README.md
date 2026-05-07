@@ -20,10 +20,15 @@ GNOME Shell extension — порт [KDE Modern Clock](https://github.com/Prayag2
 ```bash
 mkdir -p ~/.local/share/gnome-shell/extensions/modernclock@gnome-port
 unzip modernclock@gnome-port.zip -d ~/.local/share/gnome-shell/extensions/modernclock@gnome-port/
+```
+
+Перелогинься чтобы система увидела новое расширение, затем включи:
+
+```bash
 gnome-extensions enable modernclock@gnome-port
 ```
 
-Перелогинься чтобы расширение заработало.
+Перелогинься ещё раз чтобы расширение заработало.
 
 > Шрифты Anurati и Poppins установятся автоматически при первом запуске расширения.
 
