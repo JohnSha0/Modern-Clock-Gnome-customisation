@@ -111,14 +111,14 @@ export default class ModernClockExtension extends Extension {
         Main.layoutManager._backgroundGroup.add_child(this._container);
 
         // Позиционирование с микрозадержкой
-        GLib.timeout_add(GLib.PRIORITY_DEFAULT, 50, () => {
+        this._initTimeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 50, () => {
             this._reposition();
             this._container.opacity = 255;
             return GLib.SOURCE_REMOVE;
         });
 
         // Correct position after fonts are fully rendered
-        GLib.timeout_add(GLib.PRIORITY_DEFAULT, 500, () => {
+        this._correctTimeoutId = GLib.timeout_add(GLib.PRIORITY_DEFAULT, 500, () => {
             this._reposition();
             return GLib.SOURCE_REMOVE;
         });
@@ -149,9 +149,26 @@ export default class ModernClockExtension extends Extension {
             this._container.destroy();
             this._container = null;
         }
-        this._dayLabel = null;
-        this._dateLabel = null;
-        this._timeLabel = null;
+        if (this._initTimeoutId) {
+            GLib.source_remove(this._initTimeoutId);
+            this._initTimeoutId = null;
+        }
+        if (this._correctTimeoutId) {
+            GLib.source_remove(this._correctTimeoutId);
+            this._correctTimeoutId = null;
+        }
+        if (this._dayLabel) {
+            this._dayLabel.destroy();
+            this._dayLabel = null;
+        }
+        if (this._dateLabel) {
+            this._dateLabel.destroy();
+            this._dateLabel = null;
+        }
+        if (this._timeLabel) {
+            this._timeLabel.destroy();
+            this._timeLabel = null;
+        }
     }
 
     _rescaleAndReposition() {
@@ -225,7 +242,7 @@ export default class ModernClockExtension extends Extension {
             try {
                 // Синхронный вызов fc-cache — ждём завершения,
                 // чтобы шрифт был доступен сразу при первом enable()
-                let [ok, stdout, stderr, exitStatus] = GLib.spawn_command_line_sync('fc-cache -f');
+                GLib.spawn_command_line_async('fc-cache -f');
                 log('[ModernClock] fc-cache completed (sync)');
             } catch (e) {
                 log(`[ModernClock] fc-cache failed: ${e.message}`);
