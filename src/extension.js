@@ -117,6 +117,12 @@ export default class ModernClockExtension extends Extension {
             return GLib.SOURCE_REMOVE;
         });
 
+        // Correct position after fonts are fully rendered
+        GLib.timeout_add(GLib.PRIORITY_DEFAULT, 500, () => {
+            this._reposition();
+            return GLib.SOURCE_REMOVE;
+        });
+
         this._monitorsChangedId = Main.layoutManager.connect(
             'monitors-changed', () => this._rescaleAndReposition()
         );
