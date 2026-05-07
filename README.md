@@ -18,7 +18,8 @@ GNOME Shell extension — порт [KDE Modern Clock](https://github.com/Prayag2
 Скачай `modernclock@gnome-port.zip` из [Releases](https://github.com/Tony-Rain/modern-clock-gnome/releases).
 
 ```bash
-unzip modernclock@gnome-port.zip -d ~/.local/share/gnome-shell/extensions/
+mkdir -p ~/.local/share/gnome-shell/extensions/modernclock@gnome-port
+unzip modernclock@gnome-port.zip -d ~/.local/share/gnome-shell/extensions/modernclock@gnome-port/
 gnome-extensions enable modernclock@gnome-port
 ```
 
