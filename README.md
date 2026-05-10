@@ -7,7 +7,7 @@ GNOME Shell extension — a port of [KDE Modern Clock](https://github.com/Prayag
 ## Features
 
 - Exact KDE Modern Clock design (Anurati font, Mond style)
-- GNOME 46–50+
+- GNOME 46–50
 - Auto-scaling based on monitor resolution
 - Auto font installation on first run
 - Desktop widget, rendered below all windows

@@ -7,7 +7,7 @@ GNOME Shell extension — порт [KDE Modern Clock](https://github.com/Prayag2
 ## Возможности
 
 - Точный дизайн KDE Modern Clock (шрифт Anurati, стиль Mond)
-- GNOME 46–54 (включая GNOME 50+)
+- GNOME 46–50
 - Автоматическое масштабирование под разрешение монитора
 - Автоустановка шрифтов при первом запуске
 - Виджет на рабочем столе, под всеми окнами
