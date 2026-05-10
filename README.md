@@ -1,38 +1,40 @@
 # Modern Clock for GNOME
 
-GNOME Shell extension — порт [KDE Modern Clock](https://github.com/Prayag2/kde_modernclock) для GNOME. Те же шрифты (Anurati + Poppins), тот же дизайн.
+> **[🇷🇺 Русская версия](README_RU.md)**
 
-## Возможности
+GNOME Shell extension — a port of [KDE Modern Clock](https://github.com/Prayag2/kde_modernclock) for GNOME. Same fonts (Anurati + Poppins), same design.
 
-- Точный дизайн KDE Modern Clock (шрифт Anurati, стиль Mond)
-- GNOME 46–54 (включая GNOME 50+)
-- Автоматическое масштабирование под разрешение монитора
-- Автоустановка шрифтов при первом запуске
-- Виджет на рабочем столе, под всеми окнами
-- Wayland и X11
+## Features
 
-## Установка
+- Exact KDE Modern Clock design (Anurati font, Mond style)
+- GNOME 46–50+
+- Auto-scaling based on monitor resolution
+- Auto font installation on first run
+- Desktop widget, rendered below all windows
+- Wayland & X11
 
-### Способ 1: Из архива
+## Installation
 
-Скачай `modernclock@gnome-port.zip` из [Releases](https://github.com/Tony-Rain/modern-clock-gnome/releases).
+### Method 1: From archive
+
+Download `modernclock@gnome-port.zip` from [Releases](https://github.com/Tony-Rain/modern-clock-gnome/releases).
 
 ```bash
 mkdir -p ~/.local/share/gnome-shell/extensions/modernclock@gnome-port
 unzip modernclock@gnome-port.zip -d ~/.local/share/gnome-shell/extensions/modernclock@gnome-port/
 ```
 
-Перелогинься чтобы система увидела новое расширение, затем включи:
+Log out and log back in so the system detects the new extension, then enable it:
 
 ```bash
 gnome-extensions enable modernclock@gnome-port
 ```
 
-Перелогинься ещё раз чтобы расширение заработало.
+Log out and log back in again for the extension to load.
 
-> Шрифты Anurati и Poppins установятся автоматически при первом запуске расширения.
+> Anurati and Poppins fonts are installed automatically on first run.
 
-### Способ 2: Из исходников
+### Method 2: From source
 
 ```bash
 git clone https://github.com/Tony-Rain/modern-clock-gnome.git
@@ -40,82 +42,80 @@ cd modern-clock-gnome
 make install
 ```
 
-Перелогинься чтобы расширение заработало.
+Log out and log back in for the extension to load.
 
-> На Wayland обязательно logout/login. На X11 можно Alt+F2 → `r` → Enter.
+> On Wayland you must log out/in. On X11 you can press Alt+F2 → `r` → Enter.
 
-## Настройка
+## Configuration
 
-Отредактируй `~/.local/share/gnome-shell/extensions/modernclock@gnome-port/extension.js`, константы в начале файла:
+Edit `~/.local/share/gnome-shell/extensions/modernclock@gnome-port/extension.js`, constants at the top:
 
 ```javascript
 const POSITION  = 'center';      // center | top-right | top-left | bottom-right | bottom-left
-const MARGIN_X  = 60;            // отступ по горизонтали
-const MARGIN_Y  = 80;            // отступ по вертикали
-const USE_24H   = false;         // true = 24ч, false = 12ч AM/PM
-const TIME_CHAR = '-';           // символ вокруг времени
+const MARGIN_X  = 60;            // horizontal margin
+const MARGIN_Y  = 80;            // vertical margin
+const USE_24H   = false;         // true = 24h, false = 12h AM/PM
+const TIME_CHAR = '-';           // character around time
 ```
 
-После изменений — перелогинься.
+After editing — log out and log back in.
 
-## Удаление
+## Uninstallation
 
-### Если устанавливал из архива (Способ 1) или нет папки репозитория
+### Installed from archive (Method 1)
 
 ```bash
 gnome-extensions disable modernclock@gnome-port
 rm -rf ~/.local/share/gnome-shell/extensions/modernclock@gnome-port
 ```
 
-### Если устанавливал из исходников (Способ 2)
-
-
+### Installed from source (Method 2)
 
 ```bash
 cd modern-clock-gnome
 make uninstall
 ```
 
-> `make uninstall` работает только если у тебя есть клонированный репозиторий с Makefile.
+> `make uninstall` only works if you have the cloned repository with the Makefile.
 
-### Удалить шрифты (необязательно)
+### Remove fonts (optional)
 
 ```bash
 rm -rf ~/.local/share/fonts/modernclock
 fc-cache -f
 ```
 
-## Решение проблем
+## Troubleshooting
 
-**Виджет не появился** — перелогинься (обязательно на Wayland).
+**Widget not visible** — make sure you logged out and back in (required on Wayland).
 
-**Неправильный шрифт** — проверь установку:
+**Wrong font** — check if Anurati is installed:
 ```bash
 fc-list | grep -i anurati
 ```
-Если пусто — установи вручную:
+If not found, install manually:
 ```bash
 mkdir -p ~/.local/share/fonts/modernclock
 cp ~/.local/share/gnome-shell/extensions/modernclock@gnome-port/fonts/* ~/.local/share/fonts/modernclock/
 fc-cache -f
 ```
 
-**Логи:**
+**Logs:**
 ```bash
 journalctl --user -b 0 | grep -i ModernClock
 ```
 
-## Известные ограничения
+## Known limitations
 
-- Не виден во время анимации смены рабочих столов (ограничение GNOME Shell на Wayland)
-- Не виден в обзоре Activities
+- Not visible during workspace switch animation (GNOME Shell limitation on Wayland)
+- Not visible in Activities overview
 
-## Благодарности
+## Credits
 
-- Оригинал: [Prayag2/kde_modernclock](https://github.com/Prayag2/kde_modernclock) (GPL-3.0)
-- Дизайн: Rainmeter скин "Mond"
-- Шрифты: Anurati (SIL OFL), Poppins (SIL OFL / Apache 2.0)
+- Original: [Prayag2/kde_modernclock](https://github.com/Prayag2/kde_modernclock) (GPL-3.0)
+- Design: Rainmeter skin "Mond"
+- Fonts: Anurati (SIL OFL), Poppins (SIL OFL / Apache 2.0)
 
-## Лицензия
+## License
 
 GPL-3.0
