@@ -13,6 +13,12 @@ GNOME Shell extension — порт [KDE Modern Clock](https://github.com/Prayag2
 - Виджет на рабочем столе, под всеми окнами
 - Wayland и X11
 
+## Скриншоты
+
+![Modern Clock](assets/Modern-Clock1.jpg)
+
+![Modern Clock](assets/Modern-Clock2.png)
+
 ## Установка
 
 ### Способ 1: Из архива

@@ -13,6 +13,12 @@ GNOME Shell extension — a port of [KDE Modern Clock](https://github.com/Prayag
 - Desktop widget, rendered below all windows
 - Wayland & X11
 
+## Screenshots
+
+![Modern Clock](assets/Modern-Clock1.jpg)
+
+![Modern Clock](assets/Modern-Clock2.png)
+
 ## Installation
 
 ### Method 1: From archive
