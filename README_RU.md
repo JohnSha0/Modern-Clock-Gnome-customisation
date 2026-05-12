@@ -1,5 +1,7 @@
 > **[🇬🇧 English version](README.md)**
 
+[<img src="https://raw.githubusercontent.com/andyholmes/gnome-shell-extensions-badge/master/get-it-on-ego.svg?sanitize=true" alt="Get it on GNOME Extensions" height="100">](https://extensions.gnome.org/extension/9882/modern-clock/)
+
 # Modern Clock for GNOME
 
 GNOME Shell extension — порт [KDE Modern Clock](https://github.com/Prayag2/kde_modernclock) для GNOME. Те же шрифты (Anurati + Poppins), тот же дизайн.
