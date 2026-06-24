@@ -37,19 +37,25 @@ function buildStyles(monitorHeight) {
     // Масштаб относительно 1080p
     const scale = monitorHeight / BASE_HEIGHT;
 
-    const daySize = Math.round(BASE_DAY_SIZE * scale * 1.50);
-    const dayLs   = Math.round(BASE_DAY_LS * scale);
-    const subSize = Math.round(BASE_SUB_SIZE * scale * 1.16);
-    const timeSize = Math.round(subSize * 1.30);
-    const dateSize = Math.round(subSize * 1.45);
-    const subLs   = Math.round(BASE_SUB_LS * scale);
-    const padTop1 = Math.round(0 * scale);
-    const padTop2 = Math.round(0 * scale);
+    const daySize  = Math.round(BASE_DAY_SIZE * scale * 1.32);
+    const dayLs    = Math.round(BASE_DAY_LS * scale);
+
+    const subSize  = Math.round(BASE_SUB_SIZE * scale * 1.16);
+
+    const timeSize = Math.round(subSize * 1.25);
+    const dateSize = Math.round(subSize * 1.40);
+
+    const subLs    = Math.round(BASE_SUB_LS * scale);
+
+    const padTop1  = Math.round(-2 * scale);
+    const padTop2  = Math.round(6 * scale);;
 
     return {
         day:  `font-family: Anurati, sans-serif; font-size: ${daySize}px; color: #ffffff; letter-spacing: ${dayLs}px; text-align: center; text-shadow: 0 0 8px rgba(0,0,0,0.9); padding-bottom: 0px;`,
-        date: `font-family: Dune Rise, sans-serif; font-size: ${dateSize}px; color: #ffffff; letter-spacing: ${subLs}px; text-align: center; padding-top: ${padTop1}px;`,
-        time: `font-family: Orbitron, sans-serif; font-size: ${timeSize}px; color: #ffffff; letter-spacing: ${subLs}px; text-align: center; padding-top: ${padTop2}px;`,
+
+        date: `font-family: Orbitron, sans-serif; font-size: ${dateSize}px; color: #ffffff; letter-spacing: ${subLs}px; text-align: center; padding-top: ${padTop1}px;`,
+
+        time: `font-family: Orbitron, sans-serif; font-size: ${timeSize}px; color: #ffffff; letter-spacing: ${subLs}px; text-align: center; padding-top: ${padTop2}px;`,
     };
 }
 
@@ -280,7 +286,7 @@ export default class ModernClockExtension extends Extension {
                 // Контейнер на всю ширину экрана, текст центрируется внутри
                 this._container.width = monitor.width;
                 x = monitor.x;
-                y = monitor.y + (monitor.height - h) / 2 + 300;
+                y = monitor.y + (monitor.height - h) / 2 + 295;
                 break;
             case 'top-right':
             default:
